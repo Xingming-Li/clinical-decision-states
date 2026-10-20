@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "clinical-decision-states"
+version = "0.1.0"
+description = "Temporal reconstruction of clinical decision states from synthetic longitudinal breast cancer records"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Xingming Li" }]
+dependencies = ["pydantic>=2.7,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/clinical_decision_states"]
+
+[tool.pytest.ini_options]
+# Lets the test suite import the package straight from a checkout, with no
+# editable install required.
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

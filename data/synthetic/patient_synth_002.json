@@ -1,0 +1,79 @@
+{
+  "patient_id": "SYNTH-002",
+  "events": [
+    {
+      "patient_id": "SYNTH-002",
+      "event_id": "e01",
+      "event_type": "clinical_note",
+      "event_time": "2024-09-02T08:00:00+02:00",
+      "available_time": "2024-09-02T09:10:00+02:00",
+      "source_type": "external_referral",
+      "payload": {
+        "note_type": "referral_letter",
+        "reason": "right_breast_mass_on_self_examination",
+        "symptom_onset_reported": "approximately_6_weeks_before_referral"
+      }
+    },
+    {
+      "patient_id": "SYNTH-002",
+      "event_id": "e02",
+      "event_type": "imaging_report",
+      "event_time": "2024-09-10T07:45:00+02:00",
+      "available_time": "2024-09-11T09:30:00+02:00",
+      "source_type": "radiology_system",
+      "payload": {
+        "modality": "mri",
+        "laterality": "right",
+        "lesion_size_mm": 38,
+        "multifocal": true,
+        "report_status": "final"
+      }
+    },
+    {
+      "patient_id": "SYNTH-002",
+      "event_id": "e03",
+      "event_type": "pathology_report",
+      "event_time": "2024-09-12T09:00:00+02:00",
+      "available_time": "2024-09-17T15:10:00+02:00",
+      "source_type": "pathology_lab",
+      "payload": {
+        "specimen": "core_needle_biopsy",
+        "histology": "invasive_carcinoma_no_special_type",
+        "grade": 3,
+        "er_status": "negative",
+        "pr_status": "negative",
+        "her2_status": "positive",
+        "ki67_percent": 45,
+        "report_status": "final"
+      }
+    },
+    {
+      "patient_id": "SYNTH-002",
+      "event_id": "e04",
+      "event_type": "decision",
+      "event_time": "2024-09-24T08:00:00+02:00",
+      "available_time": "2024-09-24T09:40:00+02:00",
+      "source_type": "mdt_conference",
+      "payload": {
+        "decision_type": "treatment_plan",
+        "recorded_decision": "neoadjuvant_systemic_therapy_then_surgery",
+        "evidence_event_ids": ["e01", "e02", "e03"],
+        "schedules_event_ids": ["e05"]
+      }
+    },
+    {
+      "patient_id": "SYNTH-002",
+      "event_id": "e05",
+      "event_type": "procedure",
+      "event_time": "2024-10-29T07:30:00+01:00",
+      "available_time": "2024-09-24T09:40:00+02:00",
+      "source_type": "ehr_order",
+      "payload": {
+        "procedure": "mastectomy_with_sentinel_node_biopsy",
+        "laterality": "right",
+        "booking_status": "scheduled",
+        "fixture_note": "prospectively scheduled: available_time precedes event_time by ~35 days; event_time also crosses the CEST to CET transition"
+      }
+    }
+  ]
+}

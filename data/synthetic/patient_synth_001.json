@@ -1,0 +1,84 @@
+{
+  "patient_id": "SYNTH-001",
+  "events": [
+    {
+      "patient_id": "SYNTH-001",
+      "event_id": "e01",
+      "event_type": "imaging_report",
+      "event_time": "2024-03-04T09:15:00+01:00",
+      "available_time": "2024-03-04T14:40:00+01:00",
+      "source_type": "radiology_system",
+      "payload": {
+        "modality": "mammography",
+        "laterality": "left",
+        "birads": 4,
+        "lesion_size_mm": 14,
+        "report_status": "final"
+      }
+    },
+    {
+      "patient_id": "SYNTH-001",
+      "event_id": "e02",
+      "event_type": "imaging_report",
+      "event_time": "2024-03-08T10:30:00+01:00",
+      "available_time": "2024-03-08T12:05:00+01:00",
+      "source_type": "radiology_system",
+      "payload": {
+        "modality": "ultrasound",
+        "laterality": "left",
+        "birads": 4,
+        "lesion_size_mm": 15,
+        "axillary_nodes": "indeterminate",
+        "report_status": "final"
+      }
+    },
+    {
+      "patient_id": "SYNTH-001",
+      "event_id": "e03",
+      "event_type": "pathology_report",
+      "event_time": "2024-03-08T11:10:00+01:00",
+      "available_time": "2024-03-19T16:20:00+01:00",
+      "source_type": "pathology_lab",
+      "payload": {
+        "specimen": "core_needle_biopsy",
+        "collection_site": "left_breast_upper_outer_quadrant",
+        "histology": "invasive_ductal_carcinoma",
+        "grade": 2,
+        "er_status": "positive",
+        "pr_status": "positive",
+        "her2_status": "negative",
+        "ki67_percent": 18,
+        "report_status": "final",
+        "fixture_note": "delayed report: 11 days between specimen collection and release"
+      }
+    },
+    {
+      "patient_id": "SYNTH-001",
+      "event_id": "e04",
+      "event_type": "clinical_note",
+      "event_time": "2024-03-12T13:00:00+01:00",
+      "available_time": "2024-03-12T13:55:00+01:00",
+      "source_type": "ehr_note",
+      "payload": {
+        "note_type": "outpatient_consult",
+        "documented_findings": ["palpable left breast lesion", "no palpable axillary nodes"],
+        "pending_investigations": ["core_needle_biopsy_histopathology"],
+        "fixture_note": "written while e03 was still unavailable"
+      }
+    },
+    {
+      "patient_id": "SYNTH-001",
+      "event_id": "e05",
+      "event_type": "decision",
+      "event_time": "2024-03-21T08:30:00+01:00",
+      "available_time": "2024-03-21T10:15:00+01:00",
+      "source_type": "mdt_conference",
+      "payload": {
+        "decision_type": "treatment_plan",
+        "recorded_decision": "breast_conserving_surgery_with_sentinel_node_biopsy",
+        "evidence_event_ids": ["e01", "e02", "e03"],
+        "unavailable_evidence_event_ids": []
+      }
+    }
+  ]
+}
