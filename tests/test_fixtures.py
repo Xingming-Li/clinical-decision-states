@@ -4,7 +4,7 @@ from datetime import timedelta
 
 import pytest
 
-from clinical_decision_states import (
+from cds import (
     SYNTHETIC_DATA_DIR,
     EventType,
     load_synthetic_timelines,

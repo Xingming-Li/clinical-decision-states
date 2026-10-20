@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, timezone
 import pytest
 from pydantic import ValidationError
 
-from clinical_decision_states import ClinicalEvent, EventType, PatientTimeline, SourceType
+from cds import ClinicalEvent, EventType, PatientTimeline, SourceType
 
 CET = timezone(timedelta(hours=1))
 
